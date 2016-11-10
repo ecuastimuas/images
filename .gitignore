@@ -16,6 +16,7 @@ config.core.php
 #Exclude generated files
 src/css
 src/img
+src/fonts
 
 #Exclude external libs
 bower_components
