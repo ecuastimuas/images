@@ -1,0 +1,4 @@
+key: babel.contextKeys
+value: web
+namespace: babel
+area: common

@@ -1,0 +1,15 @@
+#Exclude MODX
+_backup
+assets
+connectors
+core
+manager
+index.php
+config.core.php
+
+#Exclude htaccess
+.htaccess
+
+#Exclude WebStorm data
+.idea
+

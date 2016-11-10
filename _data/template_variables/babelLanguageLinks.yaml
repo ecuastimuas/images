@@ -1,0 +1,11 @@
+id: 1
+type: hidden
+name: babelLanguageLinks
+caption: Babel-Übersetzungslinks
+description: 'Wird über das Babel-Plugin verwaltet. Bitte nicht ändern'
+elements: null
+default_text: ''
+properties: null
+input_properties: null
+output_properties: null
+content: ''

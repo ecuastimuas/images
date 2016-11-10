@@ -1,0 +1,3 @@
+name: babel
+path: '{core_path}components/babel/'
+assets_path: '{assets_path}components/babel/'
