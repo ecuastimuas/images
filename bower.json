@@ -1,0 +1,22 @@
+{
+  "name": "images",
+  "homepage": "https://github.com/ecuastimuas/images",
+  "authors": [
+    "Leo Leimser <leo.leimser@me.com>"
+  ],
+  "description": "",
+  "main": "index.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "isotope": "^3.0.1"
+  }
+}

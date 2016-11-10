@@ -16,3 +16,7 @@ config.core.php
 #Exclude generated files
 src/css
 src/img
+
+#Exclude external libs
+bower_components
+node_modules
