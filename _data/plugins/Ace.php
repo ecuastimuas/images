@@ -1,4 +1,4 @@
-id: 1
+id: 6
 name: Ace
 description: 'Ace code editor plugin for MODx Revolution'
 properties: null

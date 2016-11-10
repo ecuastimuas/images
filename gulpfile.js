@@ -35,14 +35,22 @@ gulp.task('watch', ['default'], function () {
 
 
 gulp.task('js', function () {
-    return gulp.src([
-            'bower_components/jquery/dist/jquery.min.js',
-            'bower_components/bootstrap/dist/js/bootstrap.min.js',
-            'bower_components/isotope/dist/istotope.pkgd.min.js',
-            'src/js/**/*.js'
+    gulp.src([
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+        'bower_components/isotope/dist/istotope.pkgd.min.js',
+        'src/js/**/*.js'
+    ])
+    .pipe(uglify('script.min.js'))
+    .pipe(size({ 'showFiles': true }))
+    .pipe(gulp.dest('assets/js'));
+
+     return gulp.src([
+            'bower_components/angular/angular.min.js',
+            'src/angular/**/*.js'
         ])
-        .pipe(uglify('script.min.js'))
-        .pipe(size())
+        .pipe(concat('angular.min.js'))
+        .pipe(size({ 'showFiles': true }))
         .pipe(gulp.dest('assets/js'));
 });
 
@@ -55,7 +63,7 @@ gulp.task('less', function () {
         .pipe(autoprefixer('last 2 version'))
         .pipe(rename({suffix: '.min'}))
         .pipe(cssnano())
-        .pipe(size())
+        .pipe(size({ 'showFiles': true }))
         .pipe(gulp.dest('assets/css'));
 });
 

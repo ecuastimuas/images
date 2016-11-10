@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "isotope": "^3.0.1"
+    "isotope": "^3.0.1",
+    "angular": "^1.5.8"
   }
 }
