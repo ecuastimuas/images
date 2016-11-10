@@ -13,3 +13,6 @@ config.core.php
 #Exclude WebStorm data
 .idea
 
+#Exclude generated files
+src/css
+src/img
