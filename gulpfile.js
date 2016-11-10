@@ -27,7 +27,7 @@ gulp.task('clean', function () {
 
 
 
-gulp.task('watch', function () {
+gulp.task('watch', ['default'], function () {
     gulp.watch('src/less/**/*.less', ['less']);
     gulp.watch('src/js/**/*.js', ['js']);
 });
@@ -37,6 +37,7 @@ gulp.task('watch', function () {
 gulp.task('js', function () {
     return gulp.src([
             'bower_components/jquery/dist/jquery.min.js',
+            'bower_components/bootstrap/dist/js/bootstrap.min.js',
             'bower_components/isotope/dist/istotope.pkgd.min.js',
             'src/js/**/*.js'
         ])
