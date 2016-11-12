@@ -1,0 +1,34 @@
+.grid {
+  max-width: 1200px;
+  padding: 20px;
+  background: #DDD;
+}
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  background: #ccc;
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 0 2px 4px rgba(0,0,0,.24);
+}
+
+.grid-item--width2 { width: 420px; }
+.grid-item--height2 { height: 420px; }
+
+.dz-thumbnail {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

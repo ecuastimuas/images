@@ -38,7 +38,7 @@ gulp.task('js', function () {
     return gulp.src([
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/bootstrap/dist/js/bootstrap.min.js',
-        'bower_components/isotope/dist/istotope.pkgd.min.js',
+        'bower_components/isotope/dist/isotope.pkgd.min.js',
         'bower_components/dropzone/dist/min/dropzone.min.js',
         'src/js/**/*.js'
     ])
