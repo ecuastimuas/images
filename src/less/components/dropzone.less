@@ -1,15 +1,30 @@
 #image-dropzone {
-  position: absolute;
-  top: @navbar-height;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  min-height: ~"calc(100vh - @{navbar-height})";
+  height: auto;
 
-  margin: 0;
-  padding: 30px;
-  background: rgba(255,255,255,.95);
+  padding: 0 15px;
 }
 
-.dz-thumbnail {
-  width: 300px;
+.grid {
+
+}
+
+/* fluid 5 columns */
+.grid-sizer,
+.grid-item { width: ~"calc(25% - 20px)"; }
+
+@media(max-width: @screen-md-max) {
+  .grid-sizer,
+  .grid-item { width: ~"calc(33.33333% - 20px)"; }
+}
+
+/* ---- .grid-item ---- */
+
+.grid-item {
+  background: #4996dd;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
 }

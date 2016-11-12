@@ -2,21 +2,22 @@ Dropzone.autoDiscover = false;
 
 $(function() {
 
-    var $grid = $('.grid').isotope({
+    var $previewTemplate = $('#preview-template > .grid-item');
+
+    var $grid = $('.grid').masonry({
+        gutter: 24,
         itemSelector: '.grid-item',
-        layoutMode: 'masonry',
-        masonry: {
-            columnWidth: 200,
-            gutter: 20
-        }
+        columnWidth: '.grid-sizer',
+        percentPosition: true
     });
 
-    var $previewTemplate = $('#preview-template').find('.grid-item');
+    $grid.on( 'click', '.grid-item', function() {
+        $(this).toggleClass('gigante');
+        // trigger layout after item size changes
+        $grid.masonry('layout');
+    });
 
-    var $newItem = null;
-    var $itemArray = [];
-
-    $("body").dropzone({
+    $("#image-dropzone").dropzone({
         url: 'api/process-image',
         parallelUploads: 2,
         maxFilesize: 20,
@@ -32,10 +33,14 @@ $(function() {
 
             var img = JSON.parse(response.xhr.response);
 
-            var $newItem = $previewTemplate.clone();
-            $newItem.find('.dz-thumbnail').attr('src', img.thumbnail);
+            var $preview = $(response.previewElement);
+            $preview.find('.dz-thumbnail').attr('src', img.thumbnail);
+            $preview.addClass(img.class);
 
-            if (Math.random() > 0.5) {
+            $grid.masonry( 'appended', $preview );
+            $grid.masonry('layout');
+
+            /*if (Math.random() > 0.5) {
                 $newItem.addClass('grid-item--width2');
             }
 
@@ -46,7 +51,7 @@ $(function() {
             $grid.isotope()
                 .append( $newItem )
                 .isotope( 'appended', $newItem )
-                .isotope('layout');
+                .isotope('layout');*/
         }
     });
 
